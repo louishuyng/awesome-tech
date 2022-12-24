@@ -10,20 +10,33 @@ we create a socket on server side with specific port and ip address also type so
 **On the client side**, we create a socket and let os decide the port then send it to the socket that server is hosting. Then, it will show the prompt input in the term for you to type the text. Type any text you want and you will see the result through the log
 
 ## Running Server
+### `UDP`
 ```python
-python3 server.py
+python3 udp/server.py
+```
+
+### `TCP`
+```python
+python3 tcp/server.py
 ```
 
 ## Running Client
+### `UDP`
 ```python
-python3 client.py
+python3 udp/client.py
+```
+
+### `TCP`
+```python
+python3 tcp/client.py
 ```
 
 - Show prompt input and you can type any message you want
 
 ## Running Multiple Host Client
+### `UPP`
 ```python
-python3 client.py
+python3 udp/client.py
 ```
 
 - Show prompt input the host you want to send a message and receive a message
