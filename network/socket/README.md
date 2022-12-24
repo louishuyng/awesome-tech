@@ -19,7 +19,15 @@ python3 server.py
 python3 client.py
 ```
 
-It will show prompt input and you can type any message you want
+- Show prompt input and you can type any message you want
+
+## Running Multiple Host Client
+```python
+python3 client.py
+```
+
+- Show prompt input the host you want to send a message and receive a message
+- Show prompt input and you can type any message you want
 
 
 ## The Result
