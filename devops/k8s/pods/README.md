@@ -25,4 +25,24 @@ kubectl get pods -o yaml
 
 ```bash
 kubectl describe pod db
+kubectl describe -f db.yml
+```
+
+## Exec Container inside pod
+
+```bash
+kubectl exec -it db -- sh
+```
+
+## Watch Log Db
+
+```bash
+kubectl logs -f db
+```
+
+## Delete Log
+
+```bash
+kubectl delete pod db
+kubectl delete -f db.yml
 ```
