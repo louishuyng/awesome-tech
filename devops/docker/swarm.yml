@@ -1,0 +1,99 @@
+version: '3.7'
+services:
+  web:
+    # Path to dockerfile.
+    # '.' represents the current directory in which
+    # docker-compose.yml is present.
+
+    image: venky8283/flask_app:4.0
+
+    # Mount volume 
+    volumes:
+      - "./app/:/code:ro"
+    networks:
+      - app
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.10'
+          memory: 500M
+  database:
+    # image to fetch from docker hub
+    image: mysql/mysql-server:5.7
+
+    # Environment variables for startup script
+    # container will use these variables
+    # to start the container with these define variables. 
+    env_file:
+      - ./.env
+
+    # Mount init.sql file to automatically run 
+    # and create tables for us.
+    # everything in docker-entrypoint-initdb.d folder
+    # is executed as soon as container is up nd running.
+    volumes:
+      - "./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro"
+
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.10'
+          memory: 500M
+
+    networks:
+      - app
+  viz:
+    # Visualizer image for swarm cluster.
+    image: dockersamples/visualizer
+
+    # Mapping container ports to host port
+    ports: 
+
+      - "8080:8080"
+    # Mounting docker socket to container.
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - app
+  nginx:
+    # Application / Proxy server for our production flask app.
+    image: nginx:1.13.3
+
+    # Mount SSL and non SSL ports to redirect localhost trafic to 
+    # Nginx. 
+    ports:
+      - "443:443"
+      - "80:80"
+    # Mount self signed certificates and configuration file as read only
+    # to the container.
+
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    # Deploy replicas to divide load to two services.
+
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1024M
+        reservations:
+          cpus: '0.10'
+          memory: 500M
+
+    # Attach network to establish connection 
+    # between flask app and nginx. 
+
+    networks:
+      - app
+networks:
+  app:
