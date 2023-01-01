@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: db
-          image: mongo:3.3.
+          image: mongo:3.3
         - name: api
           image: vfarcic/go-demo-
           env:

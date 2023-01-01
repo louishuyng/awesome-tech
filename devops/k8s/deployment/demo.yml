@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment
+spec:
+  selector:
+    matchLabels:
+      type: db
+      service: demo-deployment-db
+  template:
+    metadata:
+      labels:
+        type: db
+        service: demo-deployment-db
+    spec:
+      containers:
+        - name: db
+          image: mongo:3.3
+          ports:
+          - containerPort: 28017
