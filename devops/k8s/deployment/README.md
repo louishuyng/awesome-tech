@@ -69,3 +69,9 @@ kubectl rollout undo -f zero-down-time.yml
 kubectl rollout undo -f zero-down-time.yml --to-revision=2
 kubectl rollout history -f zero-down-time.yml
 ```
+
+## Scale Deployment
+
+```bash
+kubectl scale deployment go-demo-2-api --replicas 8 --record
+```
