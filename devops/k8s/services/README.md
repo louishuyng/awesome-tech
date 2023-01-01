@@ -15,3 +15,15 @@ kubectl port-forward service/go-demo-2-svc 5005:28017 --address 0.0.0.0
 ```bash
 kubectl delete svc go-demo-2-svc
 ```
+
+## Create Service Declarative way
+
+```bash
+kubectl apply -f svc.yml 
+```
+
+## Get Service Info
+
+```bash
+kubectl get -f svc.yml 
+```
