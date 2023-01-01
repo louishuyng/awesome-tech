@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-only-db
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: db
+      service: rs-only-db
+  template:
+    metadata:
+      labels:
+        type: db
+        service: rs-only-db
+        vendor: MongoLabs
+    spec:
+      containers:
+        - name: db
+          image: mongo:3.3
+          ports:
+            - containerPort: 28017
+              protocol: TCP
