@@ -40,3 +40,16 @@ kubectl describe -f zero-down-time.yml
 ```bash
 kubectl rollout history -f zero-down-time.yml
 ```
+
+## Rollback
+
+```bash
+kubectl rollout undo -f zero-down-time.yml
+```
+
+## Rollback to specific revision
+
+```bash
+kubectl rollout undo -f zero-down-time.yml --to-revision=2
+kubectl rollout history -f zero-down-time.yml
+```
