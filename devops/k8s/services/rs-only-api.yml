@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-only-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: api
+      service: rs-only-api 
+  template:
+    metadata:
+      labels:
+        type: api
+        service: rs-only-api
+        language: go
+    spec:
+      containers:
+        - name: api
+          image: vfarcic/go-demo-2
+          env:
+            - name: DB
+              value: db-svc
+          readinessProbe:
+            httpGet:
+              path: /demo/hello
+              port: 8080
+            periodSeconds: 1
+          livenessProbe:
+            httpGet:
+              path: /demo/hello
+              port: 8080

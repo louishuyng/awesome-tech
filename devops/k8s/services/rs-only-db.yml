@@ -20,4 +20,3 @@ spec:
           image: mongo:3.3
           ports:
             - containerPort: 28017
-              protocol: TCP

@@ -27,3 +27,15 @@ kubectl apply -f svc.yml
 ```bash
 kubectl get -f svc.yml 
 ```
+
+## Test full flow
+
+```bash
+chmod +x test.sh && ./test.sh
+```
+
+## Destroy all
+
+```bash
+chmod +x destroy.sh && ./destroy.sh
+```
