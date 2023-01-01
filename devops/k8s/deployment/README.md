@@ -49,6 +49,14 @@ kubectl describe -f zero-down-time.yml
 kubectl rollout history -f zero-down-time.yml
 ```
 
+## Updating the deployment by label
+
+```bash
+kubectl set image deployments \
+  -l type=db,vendor=MongoLabs \
+  db=mongo:3.4 --record
+```
+
 ## Rollback
 
 ```bash
