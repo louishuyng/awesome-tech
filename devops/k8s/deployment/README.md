@@ -13,10 +13,18 @@ kubectl set image \
 
 ## Create Zero Deployment
 ```bash
-kubectl apply -f zero-down-time.yml 
+kubectl apply -f zero-down-time-api.yml 
 ```
 
 ## Demo Zero Deployment
+#### Delete All And Run Full Flow
+```bash
+kubectl delete -f db-demo.yml
+kubectl delete -f db-service.yml
+kubectl delete -f zero-down-time-api.ym
+
+kubectl apply -f full.yml 
+```
 #### Set image
 
 ```bash
