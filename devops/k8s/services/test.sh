@@ -1,14 +1,10 @@
 #!/bin/bash
+#
+kubectl create -f full.yml
 
-kubectl apply -f rs-only-db.yml
-kubectl apply -f db-svc.yml
+kubectl get -f full.yml
 
-kubectl apply -f rs-only-api.yml
-kubectl apply -f api-svc.yml
+nohup kubectl port-forward service/go-demo-2-api --address 0.0.0.0  5005:8080 > /dev/null 2>&1 &
 
-kubectl get all
-
-nohup kubectl port-forward service/api-svc --address 0.0.0.0 8080:8080 > /dev/null 2>&1 &
-
-# Please wait for a few seconds before executing the next command
-# curl -i "http://localhost:8080/demo/hello"
+# Please wait for a few seconds before running the following command
+# curl -i "0.0.0.0:5005/demo/hello
