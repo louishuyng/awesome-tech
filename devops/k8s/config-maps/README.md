@@ -24,3 +24,10 @@ kubectl create cm my-config \
 
 kubectl exec -it alpine -- ls /etc/config/something
 ```
+
+## Create Config Map From Env File
+```bash
+``kubectl create cm my-config \
+    --from-env-file=my-env-file.yml
+
+kubectl get cm my-config -o yam`
