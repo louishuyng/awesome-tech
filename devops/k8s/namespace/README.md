@@ -16,3 +16,20 @@ kubectl --namespace kube-public get all
 ```bash
 kubectl --namespace kube-system get all
 ```
+
+## Create New Namespace
+```bash
+kubectl create ns testing
+
+kubectl config set-context testing \
+  --namespace testing \
+  --cluster k3d-test \
+  --user admin@k3d-test
+
+kubectl config view
+```
+
+## Context Switch
+```bash
+kubectl config use-context testing
+```
