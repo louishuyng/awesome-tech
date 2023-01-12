@@ -42,3 +42,9 @@ kubectl exec -it test -- apk add -U curl
 kubectl exec -it test -- curl \
     "http://go-demo-2-api.testing:8080/demo/hello
 ```
+
+## Delete namespace
+> we delete the testing Namespace, all the objects and the resources running inside it will be removed as well. (cascading effect)
+```bash
+kubectl delete ns testing
+```
