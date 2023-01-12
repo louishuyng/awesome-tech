@@ -33,3 +33,12 @@ kubectl config view
 ```bash
 kubectl config use-context testing
 ```
+
+## Communicate between namespace
+> DNS Entry Format: <service-name>.<namespace-name>.svc.cluster.local
+```bash
+kubectl exec -it test -- apk add -U curl
+
+kubectl exec -it test -- curl \
+    "http://go-demo-2-api.testing:8080/demo/hello
+```
