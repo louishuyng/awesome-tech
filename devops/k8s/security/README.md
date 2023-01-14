@@ -80,3 +80,10 @@ kubectl describe rolebinding jdoe
 # Delete after using
 kubectl delete rolebinding jdoe
 ```
+
+### Create Cluster Role Binding
+```bash
+kubectl create -f crb-view.yml --record --save-config
+
+kubectl describe clusterrolebinding view
+```
