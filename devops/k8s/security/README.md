@@ -53,3 +53,30 @@ kubectl config set-context louis \
 
 kubectl config use-context louis
 ```
+
+### Verify Permission
+```bash
+kubectl auth can-i get pods --as louis
+
+kubectl get roles #Get Default Namespace Roles
+kubectl get clusterroles #Get Whole Cluster Roles
+
+kubectl describe clusterrole view
+kubectl describe clusterrole edit
+kubectl describe clusterrole admin
+```
+
+### Create Role Binding
+```bash
+kubectl create rolebinding louis \
+  --clusterrole view \
+  --user louis \
+  --namespace default \
+  --save-config
+
+kubectl get rolebindings
+kubectl describe rolebinding jdoe
+
+# Delete after using
+kubectl delete rolebinding jdoe
+```
