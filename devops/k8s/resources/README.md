@@ -11,3 +11,9 @@ Requests represent the expected resource utilization. They are used by Kubernete
 If a container exceeds its memory requests, the Pod it resides in might be evicted if a node runs out of memory. Such eviction usually results in the Pod being scheduled on a different node, as long as there is one with enough available memory.
 
 If a Pod cannot be scheduled to any of the nodes due to lack of available resources, it enters the pending state waiting until resources on one of the nodes are freed, or a new node is added to the cluster.
+
+## Query Metrics Server
+```bash
+kubectl --namespace kube-system  get pod # check that metrics-server is running
+kubectl top pods # Simple query of metrics-server
+
