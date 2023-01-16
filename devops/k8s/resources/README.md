@@ -40,3 +40,46 @@ kubectl create \
 kubectl --namespace dev describe \
     quota dev
 ```
+
+## Types of Quotas
+
+### 1. Compute resource quotas
+> Compute resource quotas limit the total sum of the compute resources. They are as follows:
+
+|Resource Name | Description |
+|- | - |
+| cpu | Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value.|
+limits.cpu | Across all pods in a non-terminal state, the sum of CPU limits cannot exceed this value.|
+limits.memory | Across all pods in a non-terminal state, the sum of memory limits cannot exceed this value.|
+memory | Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value.|
+requests.cpu | Across all pods in a non-terminal state, the sum of CPU requests cannot exceed this value.|
+requests.memory | Across all pods in a non-terminal state, the sum of memory requests cannot exceed this value.|
+
+### 2. Storage resource quotas
+> Storage resource quotas limit the total sum of the storage resources. We did not yet explore storage (beyond a few local examples) so you might want to keep the list that follows for future reference:
+
+|Resource Name | Description|
+| - | - |
+|requests.storage | Across all persistent volume claims, the sum of storage requests cannot exceed this value.|
+persistentvolumeclaims | The total number of persistent volume claims that can exist in the namespace.|
+|[PREFIX]/requests.storage | Across all persistent volume claims associated with the storage-class-name, the sum of storage requests cannot exceed this value.|
+|[PREFIX]/persistentvolumeclaims | Across all persistent volume claims associated with the storage-class-name, the total number of persistent volume claims that can exist in the namespace.|
+|requests.ephemeral-storage | Across all pods in the namespace, the sum of local ephemeral storage requests cannot exceed this value.|
+|limits.ephemeral-storage | Across all pods in the namespace, the sum of local ephemeral storage limits cannot exceed this value.|
+
+📝 **Please note that [PREFIX] should be replaced with <storage-class-name>.storageclass.storage.k8s.io.**
+
+### 3. Object count quotas
+Object count quotas limit the number of objects of a given type. They are as follows:
+
+|Resource Name | Description|
+| - | - |
+|configmaps | The total number of config maps that can exist in the namespace.|
+|persistentvolumeclaims | The total number of persistent volume claims that can exist in the namespace.|
+|pods | The total number of pods in a non-terminal state that can exist in the namespace. A pod is in a terminal state if status.phase in (Failed, Succeeded) is true.|
+|replicationcontrollers | The total number of replication controllers that can exist in the namespace.|
+|resourcequotas | The total number of resource quotas that can exist in the namespace.|
+|services | The total number of services that can exist in the namespace.|
+|services.loadbalancers | The total number of services of type load balancer that can exist in the namespace.|
+|services.nodeports | The total number of services of type node port that can exist in the namespace.|
+|secrets | The total number of secrets that can exist in the namespace.|
