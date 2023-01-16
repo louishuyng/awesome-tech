@@ -16,4 +16,15 @@ If a Pod cannot be scheduled to any of the nodes due to lack of available resour
 ```bash
 kubectl --namespace kube-system  get pod # check that metrics-server is running
 kubectl top pods # Simple query of metrics-server
+```
 
+## Define Resource Default and Limitations within a Namespace
+```bash
+kubectl create ns test
+
+kubectl --namespace test create \
+    -f limit-range.yml \
+    --save-config --record
+
+kubectl describe namespace test
+```
