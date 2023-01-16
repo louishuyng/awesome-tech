@@ -28,3 +28,15 @@ kubectl --namespace test create \
 
 kubectl describe namespace test
 ```
+
+## Resource Quotas
+```bash
+kubectl create ns dev
+
+kubectl create \
+    -f dev.yml \
+    --record --save-config
+
+kubectl --namespace dev describe \
+    quota dev
+```
