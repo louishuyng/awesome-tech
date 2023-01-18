@@ -1,3 +1,6 @@
+## Diagram
+![image](./pod-create-sequence-digram.png)
+
 ## Create DB Pod
 ```bash
 kubectl create -f db.yml

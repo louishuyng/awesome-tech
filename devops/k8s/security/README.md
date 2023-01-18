@@ -1,3 +1,6 @@
+## Diagram
+![image](./rbac-authorization-diagram.png)
+
 ## Create Demo Application
 ```bash
 kubectl create \

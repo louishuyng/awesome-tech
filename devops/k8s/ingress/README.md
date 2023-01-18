@@ -1,3 +1,7 @@
+## Diagram
+![image](./ingress-create-sequence-diagram.png)
+![image](./ingress-demo-flow-diagram.png)
+
 ## Setup
 ```bash
 ./setup.sh

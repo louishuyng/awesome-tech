@@ -1,3 +1,6 @@
+## Diagram
+![image](./deployment-create-sequence-diagram.png)
+
 ## Create Deployment
 ```bash
 kubectl apply -f db-demo.yml 

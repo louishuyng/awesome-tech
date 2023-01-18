@@ -1,3 +1,7 @@
+## Diagram
+![image](./replica-set-components.png)
+![image](./replica-set-create-sequence-diagram.png)
+
 ## Create Replicaset
 ```bash
 kubectl create -f demo.yml

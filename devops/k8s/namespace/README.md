@@ -1,3 +1,6 @@
+## Diagram
+![image](./basic-namespace-diagram.png)
+
 ## Get All Namespace
 ```bash
 kubectl get ns

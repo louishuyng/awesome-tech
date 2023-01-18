@@ -1,3 +1,9 @@
+## Diagram
+![image](./exposing-flow.png)
+![image](./service-components.png)
+![image](./service-create-sequence-diagram.png)
+![image](./service-discovery-diagram.png)
+
 ## Exposing a replica set resource
 ```bash
 kubectl expose rs go-demo-2 \
