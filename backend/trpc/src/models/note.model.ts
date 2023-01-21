@@ -11,6 +11,12 @@ export const NoteModel = (sequelize: Sequelize) => {
       values: ['todo', 'completed'],
       defaultValue: 'todo',
       allowNull: false
+    },
+    priority: {
+      type: DataTypes.ENUM,
+      values: ['high', 'medium', 'low', 'none'],
+      defaultValue: 'none',
+      allowNull: false
     }
   });
 };

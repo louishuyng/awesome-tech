@@ -1,21 +1,9 @@
-import { inferAsyncReturnType, initTRPC } from '@trpc/server';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import express from 'express'
 import config from './config'
 import db from './db';
-
-const t = initTRPC.context<Context>().create();
-
-const appRouter = t.router({});
-
-// Export type router type signature,
-// NOT the router itself.
-export type AppRouter = typeof appRouter;
-
-// created for each request
-const createContext = ({ }: trpcExpress.CreateExpressContextOptions) => ({}); // no context
-
-type Context = inferAsyncReturnType<typeof createContext>;
+import { createContext } from './trpc';
+import { appRouter } from './routers';
 
 const app = express();
 
