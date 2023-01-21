@@ -1,12 +1,12 @@
 import { inferAsyncReturnType, initTRPC } from '@trpc/server';
 import * as trpcExpress from '@trpc/server/adapters/express';
 import express from 'express'
+import config from './config'
+import db from './db';
 
 const t = initTRPC.context<Context>().create();
 
-const appRouter = t.router({
-
-});
+const appRouter = t.router({});
 
 // Export type router type signature,
 // NOT the router itself.
@@ -26,5 +26,8 @@ app.use(
     createContext,
   }),
 );
-console.log('Server is listening on port ' + 5500);
-app.listen(5500);
+console.log('Server is listening on port ' + config.SERVER_PORT);
+
+app.listen(config.SERVER_PORT, async () => {
+  await db.connect()
+});
