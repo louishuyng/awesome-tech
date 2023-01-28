@@ -1,10 +1,15 @@
 <script>
 	import { goto } from '$app/navigation';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+
+	/**
+	 * @type {string | URL | null}
+	 */
+	let currentSpace = null;
 	/**
 	 * @type {string}
 	 */
-	let currentSpace = 'about-me';
 
 	/**
 	 * @param {string} space
@@ -15,7 +20,10 @@
 	}
 
 	onMount(() => {
-		goto(currentSpace);
+		page.subscribe((page) => {
+			currentSpace = page.url.pathname.split('/')[1] || 'about-me';
+			goto(currentSpace);
+		});
 	});
 </script>
 

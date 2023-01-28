@@ -49,7 +49,7 @@
 				{#each companyInfo as info}
 					<div>{info}</div>
 				{/each}
-				<a href={companyLink}>More Detail</a>
+				<a href={companyLink} target="_blank" rel="noreferrer">More Detail</a>
 			</div>
 		</li>
 	</ul>

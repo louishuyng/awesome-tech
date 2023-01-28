@@ -11,6 +11,11 @@
 			<span class="return_value">Huy Nguyễn</span>
 		</li>
 		<li>
+			<span class="function">gender()</span>
+			<span class="arrow">=></span>
+			<span class="return_value">Male</span>
+		</li>
+		<li>
 			<span class="function">birth_year()</span>
 			<span class="arrow">=></span>
 			<span class="return_value">1996</span>
