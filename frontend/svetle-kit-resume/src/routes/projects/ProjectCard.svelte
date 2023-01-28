@@ -36,12 +36,12 @@
 </script>
 
 <div>
-	<h3 style="margin-bottom: 0px">{timeLine}</h3>
-	<div style="display: flex; align-items: center">
-		<h4>{companyName}</h4>
-		<span class="label" style="margin-left: 0.7rem">{label}</span>
+	<div class="section">
+		<h2 style="margin-bottom: 0px">{timeLine}</h2>
 	</div>
-	<ul style="margin-top: 0">
+	<h3>{companyName}</h3>
+	<span class="label">{label}</span>
+	<ul>
 		<li>
 			<span class="function">company_info()</span>
 			<span class="arrow">=></span>

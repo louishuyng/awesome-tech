@@ -16,12 +16,13 @@
 		flex-direction: column;
 		min-height: 100vh;
 		margin-top: 3rem;
-		margin-left: 5rem;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
 		margin-top: 2rem;
+		margin-left: 2rem;
+		margin-right: 2rem;
 	}
 </style>

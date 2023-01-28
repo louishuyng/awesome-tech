@@ -5,7 +5,7 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--color-bg: #232326;
-	--color-text: #60ff60;
+	--color-text: #98c379;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	font-family: var(--font-body);
@@ -21,7 +21,6 @@ body {
 }
 
 h1,
-h2,
 p {
 	font-weight: 400;
 }
@@ -85,12 +84,17 @@ button {
         color: var(--color-text);
 }
 
+h2 {
+  font-weight: bold;
+}
+
 h3 {
         color: #c678dd;
 }
 
 .function {
         color: #98c379;
+        font-weight: bold;
 }
 
 .arrow {
@@ -113,8 +117,8 @@ h3 {
 }
 
 .label {
-  background: black;
-  color: #e5c07b;
+  color: #232326;
+  background: #e5c07b;
   font-weight: bold;
   padding-left: 0.7rem;
   padding-right: 0.7rem;
@@ -126,3 +130,17 @@ h3 {
 a {
   color: #56b6c2;
 }
+
+	.section {
+		background: var(--color-text);
+		color: var(--color-bg);
+		padding-left: 0.5rem;
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		text-align: center;
+                opacity: 0.9;
+	}
+
+	h2 {
+		margin: 0px;
+	}

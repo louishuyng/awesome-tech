@@ -3,7 +3,7 @@
 	<meta name="description" content="About Me" />
 </svelte:head>
 <div class="wrapper">
-	<h3>I. Info</h3>
+	<div class="section"><h2>I. Info</h2></div>
 	<ul>
 		<li>
 			<span class="function">name()</span>
@@ -27,7 +27,7 @@
 		</li>
 	</ul>
 
-	<h3>II. Education</h3>
+	<div class="section"><h2>II. Education</h2></div>
 	<ul>
 		<li>
 			<span class="function">awards()</span>
@@ -42,7 +42,7 @@
 		</li>
 	</ul>
 
-	<h3>III. Work Life</h3>
+	<div class="section"><h2>III. Work Life</h2></div>
 	<ul>
 		<li>
 			<span class="function">total_year_of_experience()</span>
@@ -56,7 +56,7 @@
 		</li>
 	</ul>
 
-	<h3>IV. Tech Stacks</h3>
+	<div class="section"><h2>IV. Tech Stacks</h2></div>
 	<ul>
 		<li>
 			<span class="function">backend_stacks()</span>
@@ -75,7 +75,7 @@
 		</li>
 	</ul>
 
-	<h3>V. Others</h3>
+	<div class="section"><h2>V. Others</h2></div>
 	<ul>
 		<li>
 			<span class="function">favourite_editor()</span>
@@ -117,5 +117,9 @@
 	ul {
 		margin-top: 0;
 		margin-bottom: 0;
+	}
+
+	.section {
+		margin-bottom: 1rem;
 	}
 </style>

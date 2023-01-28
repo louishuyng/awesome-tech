@@ -29,18 +29,18 @@
 
 <div class="navigation">
 	<button
-		style="margin-right: 15px"
-		on:focus={() => onClick('about-me')}
+		style="margin-right: 15px; cursor: pointer;"
+		on:click={() => onClick('about-me')}
 		class:active={currentSpace == 'about-me'}>About me</button
 	>
 	<button
-		style="margin-right: 15px"
-		on:focus={() => onClick('projects')}
+		style="margin-right: 15px; cursor: pointer;"
+		on:click={() => onClick('projects')}
 		class:active={currentSpace == 'projects'}>Projects</button
 	>
 	<button
-		style="margin-right: 15px"
-		on:focus={() => onClick('contacts')}
+		style="margin-right: 15px; cursor: pointer;"
+		on:click={() => onClick('contacts')}
 		class:active={currentSpace == 'contacts'}>Contacts</button
 	>
 </div>
@@ -49,6 +49,7 @@
 	.navigation {
 		display: flex;
 		flex-direction: row;
+		margin-left: 1rem;
 	}
 
 	.active {
