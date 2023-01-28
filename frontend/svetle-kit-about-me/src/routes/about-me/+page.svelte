@@ -111,23 +111,6 @@
 
 	ul {
 		margin-top: 0;
-	}
-
-	h3 {
-		color: #c678dd;
-	}
-
-	.function {
-		font-weight: bold;
-		color: #98c379;
-	}
-
-	.arrow {
-		color: #6f737b;
-	}
-
-	.return_value {
-		color: white;
+		margin-bottom: 0;
 	}
 </style>
-

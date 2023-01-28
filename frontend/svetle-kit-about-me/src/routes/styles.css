@@ -4,7 +4,7 @@
 	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--color-bg: #000000;
+	--color-bg: #232326;
 	--color-text: #60ff60;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
@@ -30,15 +30,6 @@ p {
 	line-height: 1.5;
 }
 
-
-h1 {
-	font-size: 2rem;
-	text-align: center;
-}
-
-h2 {
-	font-size: 1rem;
-}
 
 pre {
 	font-size: 16px;
@@ -89,7 +80,49 @@ button:focus:not(:focus-visible) {
 }
 
 button {
-        background: black;
+        background: var(--color-bg);
         border: none;
         color: var(--color-text);
+}
+
+h3 {
+        color: #c678dd;
+}
+
+.function {
+        color: #98c379;
+}
+
+.arrow {
+        color: #6f737b;
+}
+
+.return_value {
+        color: #61afef;
+}
+
+.return_quote {
+  border-left: 1px solid;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  color: #abb2bf 
+}
+
+.return_quote > div {
+  margin-top: 0.5rem;
+}
+
+.label {
+  background: black;
+  color: #e5c07b;
+  font-weight: bold;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  border-radius: 0.7rem;
+}
+
+a {
+  color: #56b6c2;
 }

@@ -15,13 +15,13 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-		margin-top: 7rem;
+		margin-top: 3rem;
 		margin-left: 5rem;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
-		margin-top: 3rem;
+		margin-top: 2rem;
 	}
 </style>
