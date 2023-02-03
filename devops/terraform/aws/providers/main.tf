@@ -1,12 +1,12 @@
 provider "aws" {
-    region = "ap-southeast-1"
-    profile = "louislab"
+  region  = "ap-southeast-1"
+  profile = "louislab"
 }
 
 provider "aws" {
-    region = "eu-west-2"
-    profile = "louislab"
-    alias = "london"
+  region  = "eu-west-2"
+  profile = "louislab"
+  alias   = "london"
 }
 
 terraform {
@@ -18,10 +18,10 @@ terraform {
 }
 
 resource "aws_vpc" "ireland_vpc" {
-    cidr_block = "10.0.0.0/16"
+  cidr_block = "10.0.0.0/16"
 }
 
 resource "aws_vpc" "london_vpc" {
-    cidr_block = "10.1.0.0/16"
-    provider = aws.london
+  cidr_block = "10.1.0.0/16"
+  provider   = aws.london
 }
