@@ -21,6 +21,9 @@ You will find your interests on the list below
 - [Docker](devops/docker)
 - [Kubernetes](devops/k8s)
 
+#### `Automation`
+- [Terraform](devops/terraform)
+
 ---
 
 ### <a name="backend">III. Backend ⛓️</a>
