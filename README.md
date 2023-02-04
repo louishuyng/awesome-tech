@@ -31,6 +31,9 @@ You will find your interests on the list below
 #### `RPC`
 - [trpc](backend/trpc)
 
+#### `AI`
+- [openai](backend/openai)
+
 ---
 
 ### <a name="frontend">IV. Frontend 🌊</a>
