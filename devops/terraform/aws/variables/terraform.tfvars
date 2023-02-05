@@ -1,5 +1,5 @@
 bucket_name   = "louis-first-buckets"
-bucket_suffix = "from-file"
+bucket_suffix = "hello-world"
 
 instance_map = {
   dev  = "t3.small"
