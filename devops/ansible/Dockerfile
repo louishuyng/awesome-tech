@@ -12,7 +12,7 @@ RUN apt-get update && \
     pip3 install boto3 && \
     pip3 install boto && \
     apt install krb5-user -y && \
-    pip3 install ansible && \
+    pip3 install "ansible==2.9.12" && \
     pip3 install "pywinrm>=0.3.0" && \
     apt install openssh-server openssh-client -y && \
     apt install sshpass -y && \

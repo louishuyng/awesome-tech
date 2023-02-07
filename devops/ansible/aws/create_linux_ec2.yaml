@@ -60,11 +60,12 @@
       when: ec2_key.changed
 
     - name: linux - create ec2 instance
-      amazon.aws.ec2_instance:
+      ec2:
         key_name: aws-ansible-key
         instance_type: t2.micro
-        image_id: ami-0c322300a1dd5dc79
+        image: ami-0c322300a1dd5dc79
         region: us-east-1
+        group: linux
         count: 1
         vpc_subnet_id: "{{ ansible_subnet.subnets[0].id }}"
         user_data: |
@@ -77,9 +78,8 @@
           rm -f tmp_sshd_config
           sudo service sshd restart
         wait: yes
-        network:
-          assign_public_ip: true
-        tags:
+        assign_public_ip: yes
+        instance_tags:
           Name: linuxweb01
           app: ansible
           env: dev
