@@ -1,0 +1,14 @@
+version: '3'
+services:
+      ansible:
+        container_name: ansible
+        image: ansible
+        tty: true
+        stdin_open: true
+        env_file:
+          - dev.env
+        volumes:
+          - "./:/ansible"
+        working_dir: /ansible
+        build:
+          context: ./

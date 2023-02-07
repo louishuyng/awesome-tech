@@ -23,6 +23,7 @@ You will find your interests on the list below
 
 #### `Automation`
 - [Terraform](devops/terraform)
+- [Ansible](devops/ansible)
 
 ---
 
