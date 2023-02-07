@@ -1,56 +1,35 @@
 ## Description
-Collected awesome tech in different fields or languages
+Collected awesome tech in different stack
 
-You will find your interests on the list below
-<br/>
-[I. Network](#network)
-<br/>
-[II. Devops](#devops)
-<br/>
-[III. Backend](#backend) 
-<br/>
-[IV. Data](#data)
-<br/>
-[V. Frontend](#frontend)
+## Table Of Contents (TOC)
+1. [Network](#network)
+2. [Devops](#devops)
+3. [Backend](#backend) 
+4. [Data](#data)
+5. [Frontend](#frontend)
 
----
+## Network
+- Protocol
+  - [socket](network/socket)
 
-### <a name="network">I. Network 🌐</a>
-#### `Protocol`
-- [socket](network/socket)
+## Devops
+- Containerization
+  - [Docker](devops/docker)
+  - [Kubernetes](devops/k8s)
+- Automation
+  - [Terraform](devops/terraform)
+  - [Ansible](devops/ansible)
 
----
+## Backend
+- RPC
+  - [trpc](backend/trpc)
+- AI
+  - [openai](backend/openai)
 
-### <a name="devops">II. Devops 🔧</a>
+## Data
 
-#### `Containerization`
-- [Docker](devops/docker)
-- [Kubernetes](devops/k8s)
-
-#### `Automation`
-- [Terraform](devops/terraform)
-- [Ansible](devops/ansible)
-
----
-
-### <a name="backend">III. Backend ⛓️</a>
-
-#### `RPC`
-- [trpc](backend/trpc)
-
-#### `AI`
-- [openai](backend/openai)
-
----
-### <a name="data">IV. Data 📁</a>
-
----
-
-### <a name="frontend">V. Frontend 🌊</a>
-
-#### `RPC`
-- [trpc](frontend/trpc)
-
-#### `Svelte`
-
-- [resume](frontend/svetle-kit-resume)
+## Frontend
+- RPC
+  - [trpc](frontend/trpc)
+- Svelte
+  - [resume](frontend/svetle-kit-resume)
