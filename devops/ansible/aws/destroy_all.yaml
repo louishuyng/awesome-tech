@@ -39,7 +39,7 @@
       with_items: "{{ ec2_ids }}"
 
     - name: terminate ec2 instances
-      amazon.aws.ec2_instance:
+      ec2:
         state: 'absent'
         region: us-east-1
         instance_ids: "{{ item.instance_id }}"
