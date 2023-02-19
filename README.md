@@ -21,6 +21,8 @@ Collected awesome tech in different stack
   - [Ansible](devops/ansible)
 
 ## Backend
+- Languages
+  - [trpc](backend/languages)
 - RPC
   - [trpc](backend/trpc)
 - AI
