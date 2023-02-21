@@ -24,6 +24,7 @@ Collected awesome tech in different stack
 - Languages
   - [golang](backend/languages/golang)
   - [kotlin](backend/languages/kotlin)
+- [Design Patterns](backend/design-patterns)
 - RPC
   - [trpc](backend/trpc)
 - AI
