@@ -22,7 +22,8 @@ Collected awesome tech in different stack
 
 ## Backend
 - Languages
-  - [trpc](backend/languages)
+  - [golang](backend/languages/golang)
+  - [kotlin](backend/languages/kotlin)
 - RPC
   - [trpc](backend/trpc)
 - AI
