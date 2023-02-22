@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-require './formatter'
-
-class PlainTextFormatter < Formatter
+class PlainTextFormatter
   def output_report(context)
     puts("***** #{context.title} *****")
     context.text.each do |line|
