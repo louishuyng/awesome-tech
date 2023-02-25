@@ -3,7 +3,7 @@
 require './composite_task'
 require './simple_tasks'
 
-class MakeBatterTask < Task
+class MakeBatterTask < CompositeTask
   def initialize
     super('Make batter')
     @sub_tasks = []

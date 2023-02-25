@@ -22,7 +22,7 @@ class MixTask < Task
   end
 end
 
-class AddLiquidTask < Task
+class AddLiquidsTask < Task
   def initialize
     super('Add liquid!')
   end
