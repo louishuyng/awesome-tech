@@ -2,6 +2,7 @@
 
 require './animals'
 require './plants'
+require './organism_factory'
 
 # Abstract Factory
 class Habitat
@@ -49,8 +50,23 @@ class JungleOrganismFactory
   end
 end
 
+# The important thing about the abstract factory
+# is that it encapsulates the knowledge of which product types go together. You can
+# express that encapsulation with classes and subclasses
+jungle = Habitat.new(1, 4, JungleOrganismFactory.new)
+jungle.simulate_one_day
+
 jungle = Habitat.new(1, 4, JungleOrganismFactory.new)
 jungle.simulate_one_day
 
 pond = Habitat.new(2, 4, PondOrganismFactory.new)
+pond.simulate_one_day
+
+# or you can get to it by storing the class objects
+jungle_organism_factory = OrganismFactory.new(Tree, Tiger)
+jungle = Habitat.new(1, 4, jungle_organism_factory)
+jungle.simulate_one_day
+
+pond_organism_factory = OrganismFactory.new(WaterLily, Frog)
+pond = Habitat.new(2, 4, pond_organism_factory)
 pond.simulate_one_day
