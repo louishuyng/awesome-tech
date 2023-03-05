@@ -5,8 +5,6 @@ require './cpu'
 require './drive'
 # The Builder pattern is used to separate the construction of a complex object
 class ComputerBuilder
-  attr_reader :computer
-
   def turbo(speed = 50)
     @computer.motherboard.cpu = TurboCPU.new(speed)
   end
@@ -34,9 +32,21 @@ class DesktopBuilder < ComputerBuilder
   def add_hard_disk(size_in_mb)
     @computer.drives << Drive.new(:hard_disk, size_in_mb, true)
   end
+
+  def computer
+    raise 'Not enough memory' if @computer.motherboard.memory_size < 250
+    raise 'Too many drives' if @computer.drives.size > 4
+
+    hard_disk = @computer.drives.find { |drive| drive.type == :hard_disk }
+    raise 'No hard disk.' unless hard_disk
+
+    @computer
+  end
 end
 
 class LaptopBuilder < ComputerBuilder
+  attr_reader :computer
+
   def initialize
     @computer = LaptopComputer.new
   end
