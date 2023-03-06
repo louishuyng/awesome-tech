@@ -1,0 +1,5 @@
+backup '/Users/admin/Documents'
+backup '/Users/admin/Music', file_name('*.mp3') & file_name('*.wav')
+backup '/Users/admin/Pictures', except(file_name('*.tmp'))
+to '/Users/admin/Desktop/backups'
+interval 60
