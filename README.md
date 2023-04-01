@@ -29,6 +29,8 @@ Collected awesome tech in different stack
   - [trpc](backend/trpc)
 - AI
   - [openai](backend/openai)
+- Opensource
+  - [CoinFeA](backend/opensource/coinfea)
 
 ## Data
 
