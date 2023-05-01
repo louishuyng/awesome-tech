@@ -6,9 +6,10 @@ Collected awesome tech in different stack
 
 1. [Network](#network)
 2. [Devops](#devops)
-3. [Backend](#backend)
-4. [Data](#data)
-5. [Frontend](#frontend)
+3. [Architecture](#architecture)
+4. [Backend](#backend)
+5. [Data](#data)
+6. [Frontend](#frontend)
 
 ## Network
 
@@ -24,6 +25,10 @@ Collected awesome tech in different stack
   - [Terraform](devops/terraform)
   - [Ansible](devops/ansible)
   - [Cloudformation](devops/cloudformation)
+
+## Architecture
+
+- [Mermaid](architecture/mermaid)
 
 ## Backend
 
