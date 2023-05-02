@@ -44,6 +44,7 @@ Collected awesome tech in different stack
   - [CoinFeA](backend/opensource/coinfea)
 
 ## Data
+- [Data Structure](data/ds)
 
 ## Frontend
 
