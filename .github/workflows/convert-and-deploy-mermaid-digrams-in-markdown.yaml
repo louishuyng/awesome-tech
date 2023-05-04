@@ -3,7 +3,7 @@ name: Convert and Deploy Mermaid Diagrams in Markdown to Github Pages
 on:
   push:
     branches:
-      - main
+      - docs
 
 permissions:
   contents: read
