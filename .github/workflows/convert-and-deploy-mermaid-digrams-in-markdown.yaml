@@ -21,25 +21,22 @@ jobs:
       - name: Generate Diagrams In Markdown Files
         run: |
           cd architecture/mermaid
-          for file in $(find . -name "*.md"); do
+          for file in $(find . -name '*.md'); do
             [ -f "$file" ] || continue
-            npx -p @mermaid-js/mermaid-cli mdc --input $file --output $file
+            npx -p @mermaid-js/mermaid-cli mmdc --input $file --output $file
           done
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
-      - name: Build with Jekll
-        uses: actions/jeckyll-build-pages@v1
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-          source: ./docs
+          source: ./architecture/mermaid
           destination: ./_site
 
       - name: Upload artifact
-        uses: actions/upload-page-artifact@v1
-        with:
-          name: site
-          path: ./_site
+        uses: actions/upload-pages-artifact@v1
 
   deploy:
     environment:
