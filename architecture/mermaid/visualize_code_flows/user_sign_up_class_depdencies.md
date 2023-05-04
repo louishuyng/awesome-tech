@@ -5,8 +5,8 @@
 classDiagram
     class UserController {
         <<Class>>
-        -CreateUserService _createUserService
-        +UserController(CreateUserService createUserService)
+        -ICreateUserService _createUserService
+        +UserController(ICreateUserService createUserService)
         +Create(String email, string username) User
     }
     
