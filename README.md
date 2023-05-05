@@ -38,6 +38,7 @@ Collected awesome tech in different stack
 - [Design Patterns](backend/design-patterns)
 - Scratch
   - [Chat App](backend/scratch/chat-app)
+  - [Uploader](backend/scratch/uploader)
 - RPC
   - [trpc](backend/trpc)
 - AI
