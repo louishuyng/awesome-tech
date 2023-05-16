@@ -25,6 +25,8 @@ Collected awesome tech in different stack
   - [Terraform](devops/terraform)
   - [Ansible](devops/ansible)
   - [Cloudformation](devops/cloudformation)
+- Cloud Provider
+  - [Aws](devops/aws)
 
 ## Architecture
 
@@ -47,6 +49,7 @@ Collected awesome tech in different stack
   - [CoinFeA](backend/opensource/coinfea)
 
 ## Data
+
 - [Data Structure](data/ds)
 
 ## Frontend
