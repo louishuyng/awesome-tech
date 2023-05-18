@@ -43,6 +43,8 @@ Collected awesome tech in different stack
   - [Uploader](backend/scratch/uploader)
 - RPC
   - [trpc](backend/trpc)
+- API Documentation
+  - [Smithy](backend/api-doc/smithy)
 - AI
   - [openai](backend/openai)
 - Opensource
