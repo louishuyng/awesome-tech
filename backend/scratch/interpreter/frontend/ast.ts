@@ -14,7 +14,7 @@ export interface Program extends Stmt {
   body: Stmt[];
 }
 
-export interface Expr extends Stmt { }
+export interface Expr extends Stmt {}
 
 export interface BinaryExpr extends Expr {
   kind: "BinaryExpr";
