@@ -12,10 +12,12 @@ export enum TokenType {
 
   // Keywords
   Let,
+  Const,
 
   // Grouping * Operators
   BinaryOperator,
   Equals,
+  Semicolon,
   OpenParen,
   CloseParen,
   EOF, // Signified the end of file
@@ -26,6 +28,7 @@ export enum TokenType {
  */
 const KEYWORDS: Record<string, TokenType> = {
   let: TokenType.Let,
+  const: TokenType.Const,
 };
 
 // Reoresents a single token from the source-code.
@@ -92,7 +95,10 @@ export function tokenize(sourceCode: string): Token[] {
     } // Handle Conditional & Assignment Tokens
     else if (src[0] == "=") {
       tokens.push(token(src.shift(), TokenType.Equals));
-    } // HANDLE MULTICHARACTER KEYWORDS, TOKENS, IDENTIFIERS ETC...
+    } else if (src[0] == ";") {
+      tokens.push(token(src.shift(), TokenType.Semicolon));
+    }
+    // HANDLE MULTICHARACTER KEYWORDS, TOKENS, IDENTIFIERS ETC...
     else {
       // Handle numeric literals -> Integers
       if (isint(src[0])) {

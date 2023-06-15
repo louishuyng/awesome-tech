@@ -5,6 +5,7 @@ import {
   BinaryExpr,
   NumericLiteral,
   Identifier,
+  VarDeclaration,
 } from "./ast.ts";
 import { tokenize, Token, TokenType } from "./lexer.ts";
 export default class Parser {
@@ -52,7 +53,54 @@ export default class Parser {
 
   private parseStmt(): Stmt {
     // skip to parse_expr
-    return this.parseExpr();
+    switch (this.at().type) {
+      case TokenType.Let:
+      case TokenType.Const:
+        return this.parseVarDeclaration();
+      default:
+        return this.parseExpr();
+    }
+  }
+
+  // LET IDENTIFIER;
+  // (LET | CONST) IDENTIFIER = EXPR;
+  private parseVarDeclaration(): Stmt {
+    const isConstant = this.eat().type === TokenType.Const;
+    const identifier = this.expect(
+      TokenType.Identifier,
+      "Expected identifier name following let | const keywords."
+    ).value;
+
+    if (this.at().type === TokenType.Semicolon) {
+      this.eat(); // expect semicolon
+      if (isConstant) {
+        throw "Must assign value to constant expression. No value provided.";
+      }
+
+      return {
+        kind: "VarDeclaration",
+        identifier,
+        constant: false,
+      } as VarDeclaration;
+    }
+
+    this.expect(
+      TokenType.Equals,
+      "Expected equals token following identifier in var declaration."
+    );
+
+    const declaration = {
+      kind: "VarDeclaration",
+      value: this.parseExpr(),
+      identifier,
+      constant: isConstant,
+    } as VarDeclaration;
+
+    this.expect(
+      TokenType.Semicolon,
+      "Variable declaration statement must end with semicolon."
+    );
+    return declaration;
   }
 
   private parseExpr(): Expr {
