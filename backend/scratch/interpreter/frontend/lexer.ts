@@ -7,7 +7,6 @@
 // Represents tokens that our language understands in parsing.
 export enum TokenType {
   // Literal Types
-  Null,
   Number,
   Identifier,
 
@@ -27,7 +26,6 @@ export enum TokenType {
  */
 const KEYWORDS: Record<string, TokenType> = {
   let: TokenType.Let,
-  null: TokenType.Null,
 };
 
 // Reoresents a single token from the source-code.
