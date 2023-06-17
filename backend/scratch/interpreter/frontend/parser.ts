@@ -6,6 +6,7 @@ import {
   NumericLiteral,
   Identifier,
   VarDeclaration,
+  AssigmentExpr,
 } from "./ast.ts";
 import { tokenize, Token, TokenType } from "./lexer.ts";
 export default class Parser {
@@ -104,7 +105,20 @@ export default class Parser {
   }
 
   private parseExpr(): Expr {
-    return this.parseAdditiveExpr();
+    return this.parseAssigmentExpr();
+  }
+
+  private parseAssigmentExpr(): Expr {
+    const left = this.parseAdditiveExpr();
+
+    if (this.at().type === TokenType.Equals) {
+      this.eat();
+      const value = this.parseAssigmentExpr();
+
+      return { value, assigne: left, kind: "AssigmentExpr" } as AssigmentExpr;
+    }
+
+    return left;
   }
 
   // (10 + 5) - 5

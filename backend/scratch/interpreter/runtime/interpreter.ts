@@ -1,6 +1,7 @@
 import { RuntimeVal, NumberVal } from "./values.ts";
 import Environment from "./environment.ts";
 import {
+  AssigmentExpr,
   BinaryExpr,
   Identifier,
   NodeType,
@@ -9,7 +10,11 @@ import {
   Stmt,
 } from "../frontend/ast.ts";
 import { evalProgram, evalVarDeclaration } from "./eval/statements.ts";
-import { evalIdentifier, evaluateBinaryExpr } from "./eval/expressions.ts";
+import {
+  evalAssignment,
+  evalIdentifier,
+  evaluateBinaryExpr,
+} from "./eval/expressions.ts";
 
 export function evaluate(astNode: Stmt, env: Environment): RuntimeVal {
   switch (astNode.kind) {
@@ -20,6 +25,8 @@ export function evaluate(astNode: Stmt, env: Environment): RuntimeVal {
       } as NumberVal;
     case "Identifier":
       return evalIdentifier(astNode as Identifier, env);
+    case "AssigmentExpr":
+      return evalAssignment(astNode as AssigmentExpr, env);
     case "BinaryExpr":
       return evaluateBinaryExpr(astNode as BinaryExpr, env);
     case "Program":

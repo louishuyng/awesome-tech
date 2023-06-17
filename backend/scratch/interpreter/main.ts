@@ -8,11 +8,11 @@ repl();
 async function repl() {
   const parser = new Parser();
   const env = new Environment();
-  env.declareVar("x", MK_NUMBER(100));
 
-  env.declareVar("true", MK_BOOL(true));
-  env.declareVar("false", MK_BOOL(false));
-  env.declareVar("null", MK_NULL());
+  // Create Default Global Environment
+  env.declareVar("true", MK_BOOL(true), true);
+  env.declareVar("false", MK_BOOL(false), true);
+  env.declareVar("null", MK_NULL(), true);
 
   console.log("\nRepl v0.1");
 
