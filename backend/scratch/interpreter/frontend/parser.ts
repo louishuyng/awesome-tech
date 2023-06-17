@@ -7,6 +7,8 @@ import {
   Identifier,
   VarDeclaration,
   AssigmentExpr,
+  Property,
+  ObjectLiteral,
 } from "./ast.ts";
 import { tokenize, Token, TokenType } from "./lexer.ts";
 export default class Parser {
@@ -109,7 +111,7 @@ export default class Parser {
   }
 
   private parseAssigmentExpr(): Expr {
-    const left = this.parseAdditiveExpr();
+    const left = this.parseObjectExpr();
 
     if (this.at().type === TokenType.Equals) {
       this.eat();
@@ -119,6 +121,58 @@ export default class Parser {
     }
 
     return left;
+  }
+
+  private parseObjectExpr(): Expr {
+    if (this.at().type !== TokenType.OpenBrace) {
+      return this.parseAdditiveExpr();
+    }
+
+    this.eat(); // advance past open brace
+    const properties = new Array<Property>();
+
+    while (this.notEof() && this.at().type !== TokenType.CloseBrace) {
+      // {key: val, key2: val}
+      const key = this.expect(
+        TokenType.Identifier,
+        "Object literal key expected"
+      ).value;
+
+      // Allows shorthand key: pair -> {key,}
+      if (this.at().type === TokenType.Comma) {
+        this.eat(); //advance past comma
+        properties.push({
+          key,
+          kind: "Property",
+          value: undefined,
+        });
+        continue;
+      } // Allows shorthand key: pair -> {key}
+      else if (this.at().type === TokenType.CloseBrace) {
+        properties.push({ key, kind: "Property" });
+        continue;
+      }
+
+      // {key: val}
+      this.expect(
+        TokenType.Colon,
+        "Missing colon following identifier in ObjectExpr"
+      );
+      const value = this.parseExpr();
+
+      properties.push({ kind: "Property", key, value });
+
+      if (this.at().type !== TokenType.CloseBrace) {
+        this.expect(
+          TokenType.Comma,
+          "Expected comma or Closing Bracket following property"
+        );
+      }
+    }
+
+    this.expect(TokenType.CloseBrace, "Object literal missing closing brace.");
+
+    return { kind: "ObjectLiteral", properties } as ObjectLiteral;
   }
 
   // (10 + 5) - 5

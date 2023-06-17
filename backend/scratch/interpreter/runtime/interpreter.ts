@@ -6,6 +6,7 @@ import {
   Identifier,
   NodeType,
   NumericLiteral,
+  ObjectLiteral,
   Program,
   Stmt,
 } from "../frontend/ast.ts";
@@ -13,6 +14,7 @@ import { evalProgram, evalVarDeclaration } from "./eval/statements.ts";
 import {
   evalAssignment,
   evalIdentifier,
+  evalObjectExpr,
   evaluateBinaryExpr,
 } from "./eval/expressions.ts";
 
@@ -25,6 +27,8 @@ export function evaluate(astNode: Stmt, env: Environment): RuntimeVal {
       } as NumberVal;
     case "Identifier":
       return evalIdentifier(astNode as Identifier, env);
+    case "ObjectLiteral":
+      return evalObjectExpr(astNode as ObjectLiteral, env);
     case "AssigmentExpr":
       return evalAssignment(astNode as AssigmentExpr, env);
     case "BinaryExpr":

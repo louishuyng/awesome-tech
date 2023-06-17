@@ -39,6 +39,7 @@ Collected awesome tech in different stack
   - [kotlin](backend/languages/kotlin)
 - [Design Patterns](backend/design-patterns)
 - Scratch
+  - [Interpreter](backend/scratch/interpreter)
   - [Chat App](backend/scratch/chat-app)
   - [Uploader](backend/scratch/uploader)
 - RPC
