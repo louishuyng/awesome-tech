@@ -3,8 +3,8 @@ import Environment from "./environment.ts";
 import {
   AssigmentExpr,
   BinaryExpr,
+  CallExpr,
   Identifier,
-  NodeType,
   NumericLiteral,
   ObjectLiteral,
   Program,
@@ -13,6 +13,7 @@ import {
 import { evalProgram, evalVarDeclaration } from "./eval/statements.ts";
 import {
   evalAssignment,
+  evalCallExpr,
   evalIdentifier,
   evalObjectExpr,
   evaluateBinaryExpr,
@@ -29,6 +30,8 @@ export function evaluate(astNode: Stmt, env: Environment): RuntimeVal {
       return evalIdentifier(astNode as Identifier, env);
     case "ObjectLiteral":
       return evalObjectExpr(astNode as ObjectLiteral, env);
+    case "CallExpr":
+      return evalCallExpr(astNode as CallExpr, env);
     case "AssigmentExpr":
       return evalAssignment(astNode as AssigmentExpr, env);
     case "BinaryExpr":
