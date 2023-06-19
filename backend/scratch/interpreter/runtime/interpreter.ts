@@ -4,13 +4,19 @@ import {
   AssigmentExpr,
   BinaryExpr,
   CallExpr,
+  FunctionDeclaration,
   Identifier,
   NumericLiteral,
   ObjectLiteral,
   Program,
   Stmt,
+  VarDeclaration,
 } from "../frontend/ast.ts";
-import { evalProgram, evalVarDeclaration } from "./eval/statements.ts";
+import {
+  evalFunctionDeclaration,
+  evalProgram,
+  evalVarDeclaration,
+} from "./eval/statements.ts";
 import {
   evalAssignment,
   evalCallExpr,
@@ -42,9 +48,11 @@ export function evaluate(astNode: Stmt, env: Environment): RuntimeVal {
     //Handle Statements
     case "VarDeclaration":
       return evalVarDeclaration(astNode as VarDeclaration, env);
+    case "FunctionDeclaration":
+      return evalFunctionDeclaration(astNode as FunctionDeclaration, env);
     default:
       console.error(
-        "This AST Node has not yet been setup interpretation",
+        "This AST Node has not yet been setup interpretation. \n",
         astNode
       );
       Deno.exit(0);

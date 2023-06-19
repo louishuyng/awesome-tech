@@ -13,6 +13,7 @@ export enum TokenType {
   // Keywords
   Let,
   Const,
+  Fn, // fn
 
   // Grouping * Operators
   BinaryOperator,
@@ -36,6 +37,7 @@ export enum TokenType {
 const KEYWORDS: Record<string, TokenType> = {
   let: TokenType.Let,
   const: TokenType.Const,
+  fn: TokenType.Fn,
 };
 
 // Reoresents a single token from the source-code.

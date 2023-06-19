@@ -1,7 +1,12 @@
-let foo = 5 * 2;
-foo =  foo / 4 + 5
+fn makeAdder (offset) {
+  fn add (x, y) {
+    x + y + offset
+  }
 
-print(foo, 45)
+  add
+}
 
-const timeNow = time();
-print(timeNow)
+const adder = makeAdder(1);
+
+print(adder)
+print(adder(10, 5))

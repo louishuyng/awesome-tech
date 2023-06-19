@@ -1,6 +1,10 @@
-import { RuntimeVal, MK_NULL } from "../values.ts";
+import { RuntimeVal, MK_NULL, FunctionValue } from "../values.ts";
 import Environment from "../environment.ts";
-import { Program, VarDeclaration } from "../../frontend/ast.ts";
+import {
+  FunctionDeclaration,
+  Program,
+  VarDeclaration,
+} from "../../frontend/ast.ts";
 import { evaluate } from "../interpreter.ts";
 
 export function evalProgram(program: Program, env: Environment): RuntimeVal {
@@ -22,4 +26,19 @@ export function evalVarDeclaration(
     : MK_NULL();
 
   return env.declareVar(declaration.identifier, value, declaration.constant);
+}
+
+export function evalFunctionDeclaration(
+  declaration: FunctionDeclaration,
+  env: Environment
+): RuntimeVal {
+  const fn = {
+    type: "function",
+    name: declaration.name,
+    parameters: declaration.parameters,
+    declarationEnv: env,
+    body: declaration.body,
+  } as FunctionValue;
+
+  return env.declareVar(declaration.name, fn, true);
 }

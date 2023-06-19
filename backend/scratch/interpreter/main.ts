@@ -11,8 +11,7 @@ async function run(filename: string) {
 
   const input = await Deno.readTextFile(filename);
   const program = parser.produceAST(input);
-  const result = evaluate(program, env);
-  console.log(result);
+  evaluate(program, env);
 }
 
 async function repl() {
@@ -31,7 +30,6 @@ async function repl() {
 
     const program = parser.produceAST(input);
 
-    const result = evaluate(program, env);
-    console.log(result);
+    evaluate(program, env);
   }
 }
