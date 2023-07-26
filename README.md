@@ -42,6 +42,7 @@ Collected awesome tech in different stack
   - [Interpreter](backend/scratch/interpreter)
   - [Chat App](backend/scratch/chat-app)
   - [Uploader](backend/scratch/uploader)
+  - [Server Send Event](backend/scratch/server-send-events)
 - RPC
   - [trpc](backend/trpc)
 - API Documentation
