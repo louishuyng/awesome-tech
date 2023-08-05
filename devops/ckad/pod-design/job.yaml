@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: random-error-job
+spec:
+  completions: 3
+  parallelism: 3
+  backoffLimit: 6
+  template:
+    spec:
+      containers:
+        - name: random-error
+          image: kodekloud/random-error
+      restartPolicy: Never
