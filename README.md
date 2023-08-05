@@ -21,6 +21,7 @@ Collected awesome tech in different stack
 - Containerization
   - [Docker](devops/docker)
   - [Kubernetes](devops/k8s)
+  - [CKAD](devops/ckad)
 - Automation
   - [Terraform](devops/terraform)
   - [Ansible](devops/ansible)
