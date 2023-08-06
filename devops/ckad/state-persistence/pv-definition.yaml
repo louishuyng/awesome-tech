@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-vol1
+  labels:
+    name: my-pv
+spec:
+  persistentVolumeReclaimPolicy: Delete # have been deleted after PersistentVolumeClaim bound to it has been removed
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /tmp/data

@@ -36,3 +36,5 @@
 - [Services and Networking](./services-and-networking)
 
 ## Section 7: State Persistence - 8%
+
+- [State Persistence](./state-persistence)
