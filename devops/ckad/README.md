@@ -38,3 +38,8 @@
 ## Section 7: State Persistence - 8%
 
 - [State Persistence](./state-persistence)
+
+## Section 8: September 2021 Exam Updates
+
+- [Authentication] (./authentication)
+- [KubeConfig] (./kube-config)
