@@ -43,3 +43,4 @@
 
 - [Authentication] (./authentication)
 - [KubeConfig] (./kube-config)
+- [authorization] (./authorization)
