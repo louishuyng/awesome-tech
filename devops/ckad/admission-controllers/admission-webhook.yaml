@@ -1,0 +1,18 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: "pod-policy.example.com"
+webhooks:
+  - clientConfig:
+      url: "https://external-server.example.com" # In case external hosted server
+      service: # In case hosted in our own k8s cluster
+        name: "webhook-service"
+        namespace: "webhook-namespace"
+      caBundle: "Ciqsdasd....asd"
+    name: "pod-policy.example.com"
+    rules:
+      - apiGroups: [""]
+        apiVersions: ["v1"]
+        operations: ["CREATE"]
+        resources: ["pods"]
+        scope: "Namespaced"
