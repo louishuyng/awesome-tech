@@ -1,0 +1,12 @@
+apiVersion: rbac.authoriziation.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cluster-adminstrator-role-binding
+subjects:
+  - kind: User
+    name: cluster-admin
+    apiGroup: rbac.authoriziation.k8s.io
+roleRef:
+  apiGroup: rbac.authoriziation.k8s.io
+  kind: ClusterRole
+  name: cluster-adminstrator
