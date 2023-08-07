@@ -45,3 +45,4 @@
 - [KubeConfig] (./kube-config)
 - [authorization] (./authorization)
 - [Admission Controllers] (./admission-controllers)
+- [Custom Resource Definition] (./custom-resource-definition)

@@ -1,0 +1,8 @@
+apiVersion: flights.com/v1
+kind: FlightTicket
+metadata:
+  name: my-flight-ticket
+spec:
+  from: Danang
+  to: Singapore
+  number: 2
