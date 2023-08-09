@@ -46,3 +46,4 @@
 - [authorization] (./authorization)
 - [Admission Controllers] (./admission-controllers)
 - [Custom Resource Definition] (./custom-resource-definition)
+- [Deployment Strategy] (./deployment-strategy)

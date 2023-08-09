@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-green
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  selector:
+    matchLabels:
+      version: v2
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        version: v2
+    spec:
+      containers:
+        - name: app-container
+          image: myapp-image:2.0
+  replicas: 5

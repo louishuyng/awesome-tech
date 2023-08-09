@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-canary
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      name: myapp-pod
+      labels:
+        version: v2
+        app: front-end
+    spec:
+      containers:
+        - name: app-container
+          image: myapp-image:2.0
+  replicas: 1
