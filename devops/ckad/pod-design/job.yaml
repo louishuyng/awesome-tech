@@ -5,7 +5,9 @@ metadata:
 spec:
   completions: 3
   parallelism: 3
-  backoffLimit: 6
+  backoffLimit: 6 # After 6 retries but not match completions it will be consider as job failed
+  activeDeadlineSeconds: 15 # The job will be terminated if it successfully starts but takes more than 15 seconds to complete execution
+  startingDeadlineSeconds: 17 # The job will be terminated if it takes more than 17 seconds
   template:
     spec:
       containers:
