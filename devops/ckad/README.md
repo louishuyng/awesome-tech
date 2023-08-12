@@ -41,9 +41,9 @@
 
 ## Section 8: September 2021 Exam Updates
 
-- [Authentication] (./authentication)
-- [KubeConfig] (./kube-config)
-- [authorization] (./authorization)
-- [Admission Controllers] (./admission-controllers)
-- [Custom Resource Definition] (./custom-resource-definition)
-- [Deployment Strategy] (./deployment-strategy)
+- [Authentication](./authentication)
+- [KubeConfig](./kube-config)
+- [authorization](./authorization)
+- [Admission Controllers](./admission-controllers)
+- [Custom Resource Definition](./custom-resource-definition)
+- [Deployment Strategy](./deployment-strategy)
