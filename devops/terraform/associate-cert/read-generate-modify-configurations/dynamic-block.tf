@@ -7,7 +7,6 @@ variable "sg_ports" {
   type        = list(number)
   description = "List of ports to open in the security group"
   default     = [22, 8080, 443, 8300, 9200]
-
 }
 
 resource "aws_security_group" "demo_sg" {

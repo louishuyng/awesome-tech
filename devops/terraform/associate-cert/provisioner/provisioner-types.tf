@@ -9,7 +9,9 @@ resource "aws_instance" "myec2" {
   key_name      = "louisdev"
 
   provisioner "remote-exec" {
-    when = create # Default behavior
+    # Default behavior 
+    #if failed it marked resource as tainted
+    when = create
     inline = [
       "sudo yum -y install vim",
     ]
