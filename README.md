@@ -32,6 +32,7 @@ Collected awesome tech in different stack
 ## Architecture
 
 - [Mermaid](architecture/mermaid)
+- [Distributed System](architecture/distributed-system)
 
 ## Backend
 
