@@ -53,6 +53,8 @@ Collected awesome tech in different stack
   - [openai](backend/openai)
 - Opensource
   - [CoinFeA](backend/opensource/coinfea)
+- AWS
+  - [Step Functions](backend/aws/step-functions)
 
 ## Data
 
