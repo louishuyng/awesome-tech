@@ -4,12 +4,17 @@ Collected awesome tech in different stack
 
 ## Table Of Contents (TOC)
 
-1. [Network](#network)
-2. [Devops](#devops)
-3. [Architecture](#architecture)
-4. [Backend](#backend)
-5. [Data](#data)
-6. [Frontend](#frontend)
+1. [Base](#base)
+2. [Network](#network)
+3. [Devops](#devops)
+4. [Architecture](#architecture)
+5. [Backend](#backend)
+6. [Data](#data)
+7. [Frontend](#frontend)
+
+## Base
+
+- [Algorithms](base/algorithms)
 
 ## Network
 
