@@ -67,6 +67,8 @@ Collected awesome tech in different stack
 
 ## Frontend
 
+- HTMX
+  - [trpc](frontend/htmx)
 - RPC
   - [trpc](frontend/trpc)
 - Svelte
