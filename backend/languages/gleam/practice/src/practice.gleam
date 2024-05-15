@@ -29,6 +29,16 @@ import flow_control/string_patterns
 import flow_control/tail_calls
 import flow_control/variable_patterns
 
+import data_types/bit_arrays
+import data_types/custom_types
+import data_types/generic_custom_types
+import data_types/nil
+import data_types/record_accessors
+import data_types/record_updates
+import data_types/records
+import data_types/results
+import data_types/tuples
+
 import gleam/io
 
 pub fn main() {
@@ -65,4 +75,16 @@ pub fn main() {
   // alternative_patterns.main()
   // pattern_aliases.main()
   // guards.main()
+
+  // === Data Types ===
+  // tuples.main()
+  // custom_types.main()
+  // records.main()
+  // record_accessors.main()
+  // record_updates.main()
+  // io.debug(generic_custom_types.name)
+  // io.debug(generic_custom_types.level)
+  // nil.main()
+  // results.main()
+  // bit_arrays.main()
 }
