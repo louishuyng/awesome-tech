@@ -39,6 +39,11 @@ import data_types/records
 import data_types/results
 import data_types/tuples
 
+import standard_library/dict_module
+import standard_library/list_module
+import standard_library/option_module
+import standard_library/result_module
+
 import gleam/io
 
 pub fn main() {
@@ -87,4 +92,10 @@ pub fn main() {
   // nil.main()
   // results.main()
   // bit_arrays.main()
+
+  // === Standard Library ===
+  // list_module.main()
+  // result_module.main()
+  // dict_module.main()
+  // option_module.main()
 }
