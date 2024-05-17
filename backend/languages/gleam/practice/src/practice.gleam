@@ -44,6 +44,14 @@ import standard_library/list_module
 import standard_library/option_module
 import standard_library/result_module
 
+import advanced_features/callback_alternative
+import advanced_features/externals
+import advanced_features/let_assert
+import advanced_features/opaque_types
+import advanced_features/panic_statement
+import advanced_features/todo_statement
+import advanced_features/use_sugar
+
 import gleam/io
 
 pub fn main() {
@@ -98,4 +106,13 @@ pub fn main() {
   // result_module.main()
   // dict_module.main()
   // option_module.main()
+
+  // === Advanced Features ===
+  // opaque_types.main()
+  // callback_alternative.with_use
+  // use_sugar.main()
+  // todo_statement.main()
+  // panic_statement.main()
+  // let_assert.main()
+  // externals.main()
 }
