@@ -50,6 +50,7 @@ Collected awesome tech in different stack
   - [Chat App](backend/scratch/chat-app)
   - [Uploader](backend/scratch/uploader)
   - [Server Send Event](backend/scratch/server-send-events)
+  - [LSP](backend/scratch/lsp-from-scratch)
 - RPC
   - [trpc](backend/trpc)
 - API Documentation
