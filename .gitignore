@@ -1,3 +1,5 @@
 .idea
 
 **/**/*.log
+
+backend/languages/rust/**/target/*

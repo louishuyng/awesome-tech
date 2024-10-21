@@ -42,6 +42,7 @@ Collected awesome tech in different stack
 ## Backend
 
 - Languages
+  - [rust](backend/languages/rust)
   - [golang](backend/languages/golang)
   - [kotlin](backend/languages/kotlin)
 - [Design Patterns](backend/design-patterns)
