@@ -10,7 +10,8 @@ Collected awesome tech in different stack
 4. [Architecture](#architecture)
 5. [Backend](#backend)
 6. [Data](#data)
-7. [Frontend](#frontend)
+7. [Blockchain](#blockchain)
+8. [Frontend](#frontend)
 
 ## Base
 
@@ -67,6 +68,9 @@ Collected awesome tech in different stack
 
 - [Data Structure](data/ds)
 
+## Blockchain
+- [Solana](blockchain/solana)
+
 ## Frontend
 
 - HTMX
@@ -75,3 +79,4 @@ Collected awesome tech in different stack
   - [trpc](frontend/trpc)
 - Svelte
   - [resume](frontend/svetle-kit-resume)
+
